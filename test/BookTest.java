@@ -1,13 +1,15 @@
+import java.io.PrintStream;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 /**
- * Created by joe on 12/01/2017.
+ * For testing Book.
  */
 public class BookTest {
-    public Book book;
+    private Book book;
 
     @Before
     public void beforeEach() {
@@ -17,6 +19,13 @@ public class BookTest {
     @Test
     public void booksShouldBeAbleToReturnTheirTitle() {
         assertEquals("We Are All Completely Beside Ourselves", book.title());
+    }
+
+    @Test
+    public void booksShouldBeAbleToPrintTheirTitle() {
+        PrintStream printStreamMock = mock(PrintStream.class);
+        book.printTitle(printStreamMock);
+        verify(printStreamMock).println("We Are All Completely Beside Ourselves");
     }
 
 }

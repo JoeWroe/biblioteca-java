@@ -1,8 +1,10 @@
+import java.io.PrintStream;
+
 /**
- * Created by joe on 12/01/2017.
+ * Class for representing a book as an object.
  */
 public class Book {
-    public String title;
+    private String title;
 
     public Book(String t) {
         title = t;
@@ -10,5 +12,9 @@ public class Book {
 
     public String title() {
         return title;
+    }
+
+    public void printTitle(PrintStream printStream) {
+        printStream.println(title());
     }
 }
