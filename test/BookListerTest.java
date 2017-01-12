@@ -18,7 +18,7 @@ public class BookListerTest {
     private ArrayList<Book> bookDirectory;
 
     @Before
-    public void beofreEach() {
+    public void beforeEach() {
         bookMock1 = mock(Book.class);
         bookMock2 = mock(Book.class);
         bookDirectory = new ArrayList<>();
@@ -29,8 +29,8 @@ public class BookListerTest {
     public void bookDirectoryShouldBeAbleToListAllBooks() {
         BookLister bookLister = new BookLister(bookDirectory);
         bookLister.listAllBooks();
-        verify(bookMock1, times(1)).printTitle(System.out);
-        verify(bookMock1, times(1)).printTitle(System.out);
+        verify(bookMock1, times(1)).printDetails(System.out);
+        verify(bookMock1, times(1)).printDetails(System.out);
     }
 
 

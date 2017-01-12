@@ -15,9 +15,9 @@ public class BibliotecaApp {
     }
 
     private static ArrayList<Book> createBookList() {
-        Book book1 = new Book("We Are All Completely Beside Ourselves");
-        Book book2 = new Book("Start With Why");
-        Book book3 = new Book("Steve Jobs: The Autobiography");
+        Book book1 = new Book("We Are All Completely Beside Ourselves", "Karen Joy Fowler", 2014);
+        Book book2 = new Book("Start With Why", "Simon Sinek", 2011);
+        Book book3 = new Book("Steve Jobs: The Exclusive Autobiography", "Walter Isaacson", 2015);
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.addAll(Arrays.asList(book1, book2, book3));
         return bookList;

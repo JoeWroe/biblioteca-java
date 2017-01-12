@@ -13,7 +13,7 @@ public class BookLister {
 
     public void listAllBooks() {
         for(Book b : bookDirectory) {
-            b.printTitle(System.out);
+            b.printDetails(System.out);
         }
     }
 }
