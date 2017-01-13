@@ -9,9 +9,9 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         WelcomeMessage welcomeMessage = new WelcomeMessage(System.out);
         welcomeMessage.displayMessage();
-        ArrayList<Book> bookList = createBookList();
-        BookLister bookLister = new BookLister(bookList);
-        bookLister.listAllBooks();
+        BookLister bookLister = new BookLister(createBookList());
+        MainMenu mainMenu = new MainMenu(createMenuOptions());
+        mainMenu.listAllOptions(System.out);
     }
 
     private static ArrayList<Book> createBookList() {
@@ -21,5 +21,12 @@ public class BibliotecaApp {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.addAll(Arrays.asList(book1, book2, book3));
         return bookList;
+    }
+
+    private static ArrayList<MainMenuOption> createMenuOptions() {
+        MenuOption listBooks = new MenuOption("List Books");
+        ArrayList<MainMenuOption> menuOptions = new ArrayList<>();
+        menuOptions.addAll(Arrays.asList(listBooks));
+        return menuOptions;
     }
 }
