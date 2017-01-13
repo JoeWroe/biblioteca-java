@@ -4,4 +4,5 @@
 public interface MainMenuOption {
 
     String name();
+    void run();
 }

@@ -9,7 +9,6 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         WelcomeMessage welcomeMessage = new WelcomeMessage(System.out);
         welcomeMessage.displayMessage();
-        BookLister bookLister = new BookLister(createBookList());
         MainMenu mainMenu = new MainMenu(createMenuOptions());
         mainMenu.listAllOptions(System.out);
     }
@@ -24,7 +23,8 @@ public class BibliotecaApp {
     }
 
     private static ArrayList<MainMenuOption> createMenuOptions() {
-        MenuOption listBooks = new MenuOption("List Books");
+        BookLister bookLister = new BookLister(createBookList());
+        MenuOption listBooks = new MenuOption("List Books", bookLister);
         ArrayList<MainMenuOption> menuOptions = new ArrayList<>();
         menuOptions.addAll(Arrays.asList(listBooks));
         return menuOptions;
