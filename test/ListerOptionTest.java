@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
- * For testing MenuOption
+ * For testing ListerOption
  */
-public class MenuOptionTest {
+public class ListerOptionTest {
 
-    private MenuOption menuOption;
+    private ListerOption listerOption;
     private BookLister bookLister;
 
     @Before
@@ -19,14 +19,14 @@ public class MenuOptionTest {
 
     @Test
     public void nameShouldReturnTheNameOfTheOption() {
-        menuOption = new MenuOption("List Books", bookLister);
-        assertEquals("List Books", menuOption.name());
+        listerOption = new ListerOption("List Books", bookLister);
+        assertEquals("List Books", listerOption.name());
     }
 
     @Test
     public void listBooksShouldBeRunableToListAllBooks() {
-        menuOption = new MenuOption("List Books", bookLister);
-        menuOption.run();
+        listerOption = new ListerOption("List Books", bookLister);
+        listerOption.run();
         verify(bookLister, times(1)).listAllBooks();
     }
 }
