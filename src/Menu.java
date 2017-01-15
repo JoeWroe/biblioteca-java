@@ -20,7 +20,16 @@ public class Menu {
 
     public void runMenuOption(String menuOption) {
         for (Option option : options) {
-            if (menuOption.equals(option.name())) option.run();
+            if (menuOption.equals(generateCommandFromUserInput(option.name()))) option.run();
         }
+    }
+
+    private String generateCommandFromUserInput(String userInput) {
+        String[] splitUserInput = userInput.split("\\s+");
+        String command = "";
+        for(String word : splitUserInput) {
+            command += word.substring(0,1);
+        }
+        return command.toUpperCase();
     }
 }
