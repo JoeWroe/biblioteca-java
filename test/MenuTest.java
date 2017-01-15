@@ -37,7 +37,7 @@ public class MenuTest {
 
     @Test
     public void runMainMenuOptionShouldExecuteTheRunMethodOfTheObjectPassed() {
-        menu.runMenuOption("List Books");
+        menu.runMenuOption("LB");
         verify(option1, times(1)).run();
     }
 }
