@@ -15,8 +15,7 @@ public class BibliotecaApp {
         menu.listAllOptions(System.out);
 
         while(true) {
-            String command = chooseOption();
-            break;
+            menu.runMenuOption(chooseOption());
         }
     }
 
