@@ -54,9 +54,9 @@ public class BookListerTest {
         systemInMock.provideLines("We Are All Completely Beside Ourselves", "Karen Joy Fowler", "2014");
         when(bookMock1.isCheckedOut()).thenReturn(false);
         when(bookMock1.isEqualTo(any(Book.class))).thenReturn(true);
-        when(bookMock1.checkOutBook()).thenReturn("Thank you! Enjoy the book");
+        when(bookMock1.checkOutBook()).thenReturn("Thank you! Enjoy the book.");
         bookLister.checkOut();
-        assertTrue(systemOutRule.getLog().contains("Thank you! Enjoy the book"));
+        assertTrue(systemOutRule.getLog().contains("Thank you! Enjoy the book."));
     }
 
     @Test
@@ -64,5 +64,22 @@ public class BookListerTest {
         systemInMock.provideLines("We Are All Completely Beside Ourselves", "Karen Joy Fowler", "2014");
         bookLister.checkOut();
         assertTrue(systemOutRule.getLog().contains("That book is unavailable."));
+    }
+
+    @Test
+    public void returnBookShouldPrintASuccessMessageIfUserHasSuccessfullyReturnedABook() {
+        systemInMock.provideLines("We Are All Completely Beside Ourselves", "Karen Joy Fowler", "2014");
+        when(bookMock1.isCheckedOut()).thenReturn(true);
+        when(bookMock1.isEqualTo(any(Book.class))).thenReturn(true);
+        when(bookMock1.returnBook()).thenReturn("Thank you for returning the book.");
+        bookLister.returnBook();
+        assertTrue(systemOutRule.getLog().contains("Thank you for returning the book."));
+    }
+
+    @Test
+    public void returnBookShouldPrintAFailureMessageIfItCouldNotReturnABook() {
+        systemInMock.provideLines("We Are All Completely Beside Ourselves", "Karen Joy Fowler", "2014");
+        bookLister.returnBook();
+        assertTrue(systemOutRule.getLog().contains("That book is not a valid return item."));
     }
 }

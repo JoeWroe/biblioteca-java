@@ -35,7 +35,7 @@ public class Book {
 
     public String returnBook() {
         checkedOut = false;
-        return "Thank you! Successfully returned!";
+        return "Thank you for returning the book.";
     }
 
     public boolean isCheckedOut() {
@@ -43,6 +43,6 @@ public class Book {
     }
 
     public boolean isEqualTo(Book book) {
-        return title == book.title() && author == book.author() && publishedYear == book.publishedYear();
+        return title.equals(book.title()) && author.equals(book.author()) && publishedYear == book.publishedYear();
     }
 }
