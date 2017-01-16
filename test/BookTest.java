@@ -9,6 +9,7 @@ import static org.mockito.Mockito.*;
  * For testing Book.
  */
 public class BookTest {
+
     private Book book;
 
     @Before
@@ -22,7 +23,7 @@ public class BookTest {
     }
 
     @Test
-    public void bookShouldBeAbleToReturnItsAutor() {
+    public void bookShouldBeAbleToReturnItsAuthor() {
         assertEquals("Karen Joy Fowler", book.author());
     }
 

@@ -1,9 +1,10 @@
 import java.io.PrintStream;
 
 /**
- * Class for representing a book as an object.
+ * Class for representing a Book.
  */
 public class Book {
+
     private String title;
     private String author;
     private int publishedYear;
