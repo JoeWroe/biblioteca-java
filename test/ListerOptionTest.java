@@ -15,17 +15,16 @@ public class ListerOptionTest {
     @Before
     public void createBookListerMock() {
         bookLister = mock(BookLister.class);
+        listerOption = new ListerOption("List Books", bookLister);
     }
 
     @Test
     public void nameShouldReturnListerOptionName() {
-        listerOption = new ListerOption("List Books", bookLister);
         assertEquals("List Books", listerOption.name());
     }
 
     @Test
     public void listBooksShouldBeRunableToListAllBooks() {
-        listerOption = new ListerOption("List Books", bookLister);
         listerOption.run();
         verify(bookLister, times(1)).listAllBooks();
     }

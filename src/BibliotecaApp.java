@@ -31,8 +31,9 @@ public class BibliotecaApp {
     private static ArrayList<Option> createOptions() {
         BookLister bookLister = new BookLister(createBookList());
         ListerOption listBooks = new ListerOption("List Books", bookLister);
+        QuitOption quit = new QuitOption("Quit");
         ArrayList<Option> menuOptions = new ArrayList<>();
-        menuOptions.addAll(Arrays.asList(listBooks));
+        menuOptions.addAll(Arrays.asList(listBooks, quit));
         return menuOptions;
     }
 

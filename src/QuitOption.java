@@ -16,6 +16,6 @@ public class QuitOption implements Option {
 
     @Override
     public void run() {
-
+        System.exit(0);
     }
 }
