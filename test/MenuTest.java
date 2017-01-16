@@ -24,7 +24,7 @@ public class MenuTest {
     @Before
     public void setUpMenuOptionAndAddToMenu() {
 //      setUpMenuOption
-        option1 = mock(ListerOption.class);
+        option1 = mock(BookListerOption.class);
         when(option1.name()).thenReturn("List Books");
 
 //      AndAddToMenu

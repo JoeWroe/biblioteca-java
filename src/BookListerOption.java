@@ -1,12 +1,12 @@
 /**
  * A class to handle the 'List Books' option for the Main Menu.
  */
-public class ListerOption implements Option {
+public class BookListerOption implements Option {
 
     private String name;
     private BookLister bookLister;
 
-    public ListerOption(String name, BookLister bookLister) {
+    public BookListerOption(String name, BookLister bookLister) {
         this.name = name;
         this.bookLister = bookLister;
     }

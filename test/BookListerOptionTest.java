@@ -5,27 +5,27 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
- * For testing ListerOption
+ * For testing BookListerOption
  */
-public class ListerOptionTest {
+public class BookListerOptionTest {
 
-    private ListerOption listerOption;
+    private BookListerOption bookListerOption;
     private BookLister bookLister;
 
     @Before
     public void createBookListerMock() {
         bookLister = mock(BookLister.class);
-        listerOption = new ListerOption("List Books", bookLister);
+        bookListerOption = new BookListerOption("List Books", bookLister);
     }
 
     @Test
     public void nameShouldReturnListerOptionName() {
-        assertEquals("List Books", listerOption.name());
+        assertEquals("List Books", bookListerOption.name());
     }
 
     @Test
     public void listBooksShouldBeRunableToListAllBooks() {
-        listerOption.run();
+        bookListerOption.run();
         verify(bookLister, times(1)).listAllBooks();
     }
 }

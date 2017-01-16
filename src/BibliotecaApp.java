@@ -30,7 +30,7 @@ public class BibliotecaApp {
 
     private static ArrayList<Option> createOptions() {
         BookLister bookLister = new BookLister(createBookList());
-        ListerOption listBooks = new ListerOption("List Books", bookLister);
+        BookListerOption listBooks = new BookListerOption("List Books", bookLister);
         QuitOption quit = new QuitOption("Quit");
         CheckOutOption checkOutItem = new CheckOutOption("Check Out", bookLister);
         ReturnOption returnItem = new ReturnOption("Return", bookLister);
