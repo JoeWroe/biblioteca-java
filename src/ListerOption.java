@@ -1,7 +1,8 @@
 /**
- * A class to handle the options for the Main Menu.
+ * A class to handle the 'List Books' option for the Main Menu.
  */
 public class ListerOption implements Option {
+
     private String name;
     private BookLister bookLister;
 

@@ -15,7 +15,7 @@ public class BibliotecaApp {
         menu.listAllOptions(System.out);
 
         while(true) {
-            menu.runMenuOption(chooseOption());
+            menu.runMenuOption(chooseOption(), System.out);
         }
     }
 
@@ -38,7 +38,7 @@ public class BibliotecaApp {
 
     private static String chooseOption() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please type your choice of option.");
+        System.out.println("Please enter the initials of your menu choice.");
         return scanner.next().toUpperCase();
     }
 }

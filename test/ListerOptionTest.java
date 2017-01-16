@@ -18,7 +18,7 @@ public class ListerOptionTest {
     }
 
     @Test
-    public void nameShouldReturnTheNameOfTheOption() {
+    public void nameShouldReturnListerOptionName() {
         listerOption = new ListerOption("List Books", bookLister);
         assertEquals("List Books", listerOption.name());
     }

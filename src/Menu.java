@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Menu {
 
     private ArrayList<Option> options;
+    private static final String INVALID_OPTION_ERROR_MESSAGE = "An invalid option has been passed,\n" +
+                                                               "Please enter a valid option,\n" +
+                                                               "A valid option is made up of the first letter of each word in the option.";
+
 
     public Menu(ArrayList<Option> options) {
         this.options = options;
@@ -18,10 +22,26 @@ public class Menu {
         }
     }
 
-    public void runMenuOption(String menuOption) {
-        for (Option option : options) {
-            if (menuOption.equals(generateCommandFromUserInput(option.name()))) option.run();
-        }
+    public void runMenuOption(String menuOption, PrintStream printStream) {
+        if (isAValidOption(menuOption)) {
+            for (Option option : options) {
+                if (menuOption.equals(generateCommandFromUserInput(option.name()))) option.run();
+            }
+        } else { printInvalidOptionErrorMessage(printStream); }
+    }
+
+    private void printInvalidOptionErrorMessage(PrintStream printStream) {
+        printStream.println(INVALID_OPTION_ERROR_MESSAGE);
+    }
+
+    private boolean isAValidOption(String menuOption) {
+        return commandsList().contains(menuOption);
+    }
+
+    private ArrayList<String> commandsList() {
+        ArrayList<String> commandsList = new ArrayList<>();
+        for(Option option : options) commandsList.add(generateCommandFromUserInput(option.name()));
+        return commandsList;
     }
 
     private String generateCommandFromUserInput(String userInput) {
