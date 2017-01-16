@@ -39,15 +39,27 @@ public class BookTest {
     }
 
     @Test
-    public void checkedOutShouldSetTheBooksCheckedOutToTrue() {
-        book.checkedOut();
+    public void isEqualToShouldReturnTrueIfTheBookPassedHasMatchingProperties() {
+        Book matchingBook = new Book("We Are All Completely Beside Ourselves", "Karen Joy Fowler", 2014);
+        assertTrue(book.isEqualTo(matchingBook));
+    }
+
+    @Test
+    public void isEqualToShouldReturnFalseIfTheBookPassedDoesNotMatch() {
+        Book nonMatchingBook = new Book("The Very Hungry Caterpillar", "Eric Carle", 2002);
+        assertFalse(book.isEqualTo(nonMatchingBook));
+    }
+
+    @Test
+    public void checkOutShouldSetTheBooksCheckedOutToTrue() {
+        book.checkOutBook();
         assertTrue(book.isCheckedOut());
     }
 
     @Test
-    public void returnedShouldSetTheBooksCheckedOutToFalse() {
-        book.checkedOut();
-        book.returned();
+    public void returnBookShouldSetTheBooksCheckedOutToFalse() {
+        book.checkOutBook();
+        book.returnBook();
         assertFalse(book.isCheckedOut());
     }
 }

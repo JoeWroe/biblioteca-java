@@ -28,15 +28,21 @@ public class Book {
         printStream.println(title()+"\t"+author()+"\t"+publishedYear());
     }
 
-    public void checkedOut() {
+    public String checkOutBook() {
         checkedOut = true;
+        return "Thank you! Enjoy the book";
     }
 
-    public void returned() {
+    public String returnBook() {
         checkedOut = false;
+        return "Thank you! Successfully returned!";
     }
 
     public boolean isCheckedOut() {
         return checkedOut;
+    }
+
+    public boolean isEqualTo(Book book) {
+        return title == book.title() && author == book.author() && publishedYear == book.publishedYear();
     }
 }
