@@ -7,6 +7,7 @@ import org.junit.contrib.java.lang.system.*;
 import static org.mockito.Mockito.*;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.*;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,6 +20,7 @@ public class BookListerTest {
     
     private Book bookMock1;
     private Book bookMock2;
+    private PrintStream printStreamMock;
     private ArrayList<Book> bookDirectory;
     private BookLister bookLister;
 
@@ -38,6 +40,11 @@ public class BookListerTest {
         bookDirectory = new ArrayList<>();
         bookDirectory.addAll(Arrays.asList(bookMock1, bookMock2));
         bookLister = new BookLister(bookDirectory);
+    }
+
+    @Before
+    public void setUpPrintStreamMock() {
+        printStreamMock = mock(PrintStream.class);
     }
 
     @Test

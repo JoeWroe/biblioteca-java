@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,12 +8,15 @@ import java.util.Scanner;
 
 public class BookLister {
     private ArrayList<Book> bookDirectory;
+    private static final String LIST_BOOKS_MESSAGE = "\nHELLO FROM THE LIST OF BOOKS";
 
     public BookLister(ArrayList<Book> bd) {
         bookDirectory = bd;
     }
 
     public void listAllBooks() {
+        PrintStream printStream = new PrintStream(System.out);
+        printStream.println(LIST_BOOKS_MESSAGE);
         for(Book b : bookDirectory) {
             if (!b.isCheckedOut()) {
                 b.printDetails(System.out);

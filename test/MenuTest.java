@@ -36,7 +36,8 @@ public class MenuTest {
     @Test
     public void menuShouldListAllOptions() {
         menu.listAllOptions(printStreamMock);
-        verify(printStreamMock).println("List Books");
+        verify(printStreamMock).println("HELLO FROM THE MAIN MENU");
+        verify(printStreamMock).println("- List Books");
     }
 
     @Test

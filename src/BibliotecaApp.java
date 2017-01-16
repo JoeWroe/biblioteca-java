@@ -41,7 +41,7 @@ public class BibliotecaApp {
 
     private static String chooseOption() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the initials of your menu choice.");
+        System.out.println("\nPlease enter the initials of your menu choice.");
         return scanner.next().toUpperCase();
     }
 }

@@ -10,7 +10,7 @@ public class WelcomeMessageTest {
 
     @Test
     public void displayMessageShouldPrintAWelcomeMessage() {
-        String message = "Hello from the Biblioteca";
+        String message = "\nHELLO FROM THE ADELE-O-TECA\n";
         PrintStream printStreamMock = mock(PrintStream.class);
 
         welcomeMessage = new WelcomeMessage(printStreamMock);

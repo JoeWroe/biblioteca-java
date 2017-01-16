@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Menu {
 
     private ArrayList<Option> options;
+    private static final String MAIN_MENU_MESSAGE = "HELLO FROM THE MAIN MENU";
     private static final String INVALID_OPTION_ERROR_MESSAGE = "An invalid option has been passed,\n" +
                                                                "Please enter a valid option,\n" +
                                                                "A valid option is made up of the first letter of each word in the option.";
@@ -17,8 +18,9 @@ public class Menu {
     }
 
     public void listAllOptions(PrintStream printStream) {
+        printStream.println(MAIN_MENU_MESSAGE);
         for(Option option : options) {
-            printStream.println(option.name());
+            printStream.println("- " + option.name());
         }
     }
 

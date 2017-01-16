@@ -35,7 +35,7 @@ public class BookTest {
     public void booksShouldBeAbleToPrintTheirDetails() {
         PrintStream printStreamMock = mock(PrintStream.class);
         book.printDetails(printStreamMock);
-        verify(printStreamMock).println("We Are All Completely Beside Ourselves\tKaren Joy Fowler\t2014");
+        verify(printStreamMock).printf("%-1.1s %-50.50s %-30.30s %-30.30s%n", "- ", "We Are All Completely Beside Ourselves", "Karen Joy Fowler", 2014);
     }
 
     @Test

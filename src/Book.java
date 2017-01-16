@@ -25,7 +25,7 @@ public class Book {
     public int publishedYear() { return publishedYear; }
 
     public void printDetails(PrintStream printStream) {
-        printStream.println(title()+"\t"+author()+"\t"+publishedYear());
+        printStream.printf("%-1.1s %-50.50s %-30.30s %-30.30s%n", "- ", title(), author(), publishedYear());
     }
 
     public String checkOutBook() {
