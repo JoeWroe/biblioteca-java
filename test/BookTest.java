@@ -43,4 +43,11 @@ public class BookTest {
         book.checkedOut();
         assertTrue(book.isCheckedOut());
     }
+
+    @Test
+    public void returnedShouldSetTheBooksCheckedOutToFalse() {
+        book.checkedOut();
+        book.returned();
+        assertFalse(book.isCheckedOut());
+    }
 }
