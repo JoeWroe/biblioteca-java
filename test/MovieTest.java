@@ -42,7 +42,7 @@ public class MovieTest {
     public void moviesShouldBeAbleToPrintTheirDetails() {
         PrintStream printStreamMock = mock(PrintStream.class);
         movie.printDetails(printStreamMock);
-        verify(printStreamMock).printf("%-1.1s %-50.50s %-30.30n %-30.30s%s %-30.30n", "- ", "Your Name", 2016, "Makoto Shinkai", 9);
+        verify(printStreamMock).printf("%-1.1s %-30.30s %-30.30s %-30.30s %-30.30s%n", "- ", "Your Name", 2016, "Makoto Shinkai", 9);
     }
 
     @Test

@@ -32,7 +32,7 @@ public class Movie {
     public int rating() { return rating; }
 
     public void printDetails(PrintStream printStream) {
-        printStream.printf("%-1.1s %-50.50s %-30.30n %-30.30s%s %-30.30n", "- ", name(), year(), director(), rating());
+        printStream.printf("%-1.1s %-30.30s %-30.30s %-30.30s %-30.30s%n", "- ", name(), year(), director(), rating());
     }
 
     public String checkOutMovie() {
