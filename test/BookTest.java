@@ -38,4 +38,9 @@ public class BookTest {
         verify(printStreamMock).println("We Are All Completely Beside Ourselves\tKaren Joy Fowler\t2014");
     }
 
+    @Test
+    public void checkedOutShouldSetTheBooksCheckedOutToTrue() {
+        book.checkedOut();
+        assertTrue(book.isCheckedOut());
+    }
 }

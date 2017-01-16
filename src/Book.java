@@ -7,11 +7,13 @@ public class Book {
     private String title;
     private String author;
     private int publishedYear;
+    private boolean checkedOut;
 
     public Book(String t, String a, int p) {
         title = t;
         author = a;
         publishedYear = p;
+        checkedOut = false;
     }
 
     public String title() {
@@ -24,5 +26,13 @@ public class Book {
 
     public void printDetails(PrintStream printStream) {
         printStream.println(title()+"\t"+author()+"\t"+publishedYear());
+    }
+
+    public void checkedOut() {
+        checkedOut = true;
+    }
+
+    public boolean isCheckedOut() {
+        return checkedOut;
     }
 }
